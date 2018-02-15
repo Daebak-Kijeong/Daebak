@@ -4,7 +4,7 @@ import sys
 
 def getMoneySpent(keyboards, drives, s):
 
-    
+
 
     return
     # Complete this function

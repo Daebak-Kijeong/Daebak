@@ -548,7 +548,9 @@ result = solve(year)
 print(result)
 
 # 태현's 코드
-
+y=int(input())
+g=44-(y%4==0)+(y>1917)*((y%100==0)-(y%400==0))+(y==1918)*13
+print('%02d.%02d.%d'%(g%31,8+(g//31),y))
 
 
 
