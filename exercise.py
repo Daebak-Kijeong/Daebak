@@ -1,18 +1,19 @@
-##electronics-shop
+##magic-square-forming
+
 
 import sys
 
-def getMoneySpent(keyboards, drives, s):
+def formingMagicSquare(s):
 
 
 
-    return
+
     # Complete this function
 
-s,n,m = input().strip().split(' ')
-s,n,m = [int(s),int(n),int(m)]
-keyboards = list(map(int, input().strip().split(' ')))
-drives = list(map(int, input().strip().split(' ')))
-#  The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
-moneySpent = getMoneySpent(keyboards, drives, s)
-print(moneySpent)
+if __name__ == "__main__":
+    s = []
+    for s_i in range(3):
+       s_t = [int(s_temp) for s_temp in input().strip().split(' ')]
+       s.append(s_t)
+    result = formingMagicSquare(s)
+    print(result)

@@ -758,14 +758,33 @@ if __name__ == "__main__":
 
 
 
+
 ##electronics-shop
+#모니카에겐 s만큼의 돈이 있다. 1<= s <=10^6
+#키보드의 종류는 n개다. 1<= n <= 1000
+#드라이브의 종류는 m개다. 1<= m <= 1000
+#키보드와 드라이브를 하나씩 살 껀데, 수중에 있는 돈의 범위 내에서 최대 가격으로 맞출꺼다.
+#만약 키보드나 드라이브 중 하나라도 못 산다면 -1을 프린트
+s,n,m = 10,2,3
+keyboards = [3,1]
+drives = [5,2,8]
 
 import sys
 
 def getMoneySpent(keyboards, drives, s):
+    li = [(k+d) for k in keyboards for d in drives]
 
+    li2 = []
+    try:
+        for v in li:
+            if v <= s:
+               li2.append(v)
 
-
+        # print(max(li2))
+        return max(li2)
+    except:
+        # print("-1")
+        return "-1"
 
 
     # Complete this function
@@ -779,4 +798,71 @@ moneySpent = getMoneySpent(keyboards, drives, s)
 print(moneySpent)
 
 
+#태현's 코드
+from collections import Counter as C
+c=C()
+input()
+print(sum(c.update(x) or c['D']==c['U'] and x=='U' for x in input()))
+
+
+
+##cats-and-a-mouse
+#x축에 고양이A와 고양이B, 쥐C가 있다.
+#x는 고양이A의 위치, y는 고양이B의 위치, z는 쥐C의 위치다.
+# q = 3
+# x,y,z = 1, 2, 3
+# # x,y,z = 1, 3, 2
+# # x,y,z = 2, 1, 3
+# q = 4
+# x,y,z = 1, 4, 2
+# q = 5
+# x,y,z = 1, 5, 3
+
+import sys
+
+def catAndMouse(x, y, z):
+    if abs(z - x) < abs(z - y):
+        # print("Cat A")
+        return("Cat A")
+    elif abs(z - x) > abs(z - y):
+        # print("Cat B")
+        return("Cat B")
+    elif abs(z - x) == abs(z - y):
+        # print("Mouse C")
+        return("Mouse C")
+
+    # Complete this function
+
+if __name__ == "__main__":
+    q = int(input().strip())
+    for a0 in range(q):
+        x, y, z = input().strip().split(' ')
+        x, y, z = [int(x), int(y), int(z)]
+        result = catAndMouse(x, y, z)
+        print ("".join(map(str, result)))
+
+
+#태현's 코드
+
+
+
+
+
+##magic-square-forming
+import sys
+
+def formingMagicSquare(s):
+
+
+
+
+    # Complete this function
+
+if __name__ == "__main__":
+    s = []
+    for s_i in range(3):
+       s_t = [int(s_temp) for s_temp in input().strip().split(' ')]
+       s.append(s_t)
+    result = formingMagicSquare(s)
+    print(result)
 
